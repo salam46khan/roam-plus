@@ -1,0 +1,30 @@
+#navbar a{
+    position: relative;
+    background: transparent;
+    font-size: 18px;
+    font-weight: 600;
+}
+#navbar a::after{
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 0;
+    height: 10%;
+    background: #D926A9;
+    transition: 0.4s;
+}
+#navbar a:hover::after{
+    width: 100%;
+}
+#navbar a.active:after{
+    width: 100%;
+}
+#navbar a:hover{
+    color: #b71f8f;
+}
+#navbar a.active{
+    color:#58C7F3;
+}
+
