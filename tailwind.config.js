@@ -6,7 +6,13 @@ export default {
     "./src/**/*.{js,ts,jsx,tsx}",
   ],
   theme: {
-    extend: {},
+    extend: {
+      fontFamily: {
+        BannerTitle :['Permanent Marker', 'cursive'],
+        Normal: ['Montserrat', 'sans-serif'],
+        Title: ['Donegal One', 'serif']
+      }
+    },
   },
   plugins: [require("daisyui")],
 }

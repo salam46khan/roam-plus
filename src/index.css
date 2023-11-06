@@ -1,4 +1,51 @@
+/* font  */
+@import url('https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Donegal+One&display=swap');
+
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+
+/* custom css  */
+.button{
+    padding: 10px 25px;
+    border: none;
+    cursor: pointer;
+    font-size: 18px;
+    text-transform: uppercase;
+    position: relative;
+    /* color: #fff; */
+    /* background: #ffffff77; */
+    /* box-shadow: inset 1px 1px 10px #0002; */
+}
+.button::after{
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 40%;
+    width: 25%;
+    border: 5px solid #F472B6;
+    border-bottom: none;
+    border-right: none;
+}
+.button::before{
+    content: '';
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    height: 40%;
+    width: 25%;
+    border: 5px solid #F472B6;
+    border-top: none;
+    border-left: none;
+}
+.button:hover::after, .button:hover::before{
+    transition: all 0.4s ease-in-out;
+    height: 100%;
+    width: 100%;
+}
 
