@@ -1,7 +1,7 @@
 
 const Services = () => {
     return (
-        <div>
+        <div className="h-44 dark:bg-slate-800 flex justify-center items-center">
             <p>services</p>
         </div>
     );

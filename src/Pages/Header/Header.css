@@ -12,7 +12,7 @@
     transform: translateX(-50%);
     width: 0;
     height: 10%;
-    background: #D926A9;
+    background: #F472B6;
     transition: 0.4s;
 }
 #navbar a:hover::after{
@@ -22,9 +22,9 @@
     width: 100%;
 }
 #navbar a:hover{
-    color: #b71f8f;
+    color: #F472B6;
 }
 #navbar a.active{
-    color:#58C7F3;
+    color:#F472B6;
 }
 
