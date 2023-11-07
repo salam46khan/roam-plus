@@ -49,3 +49,40 @@
     width: 100%;
 }
 
+
+/* style for form  */
+.input-box{
+    height: 60px;
+    min-width: 250px;
+    box-sizing: border-box;
+    margin-top: 30px;
+    position: relative;
+   
+}
+.input-box input{
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background: transparent;
+    outline: none;
+    border: none;
+    box-shadow:
+                inset -2px -2px 5px;
+    font-size: 18px;
+    padding: 10px 20px;
+    border-radius: 25px;
+}
+.input-box span{
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    transition: 0.5s;
+    font-size: 18px;
+    padding: 10px 20px;
+    pointer-events: none;
+}
+.input-box input:focus~span,
+.input-box input:valid~span{
+    transform: translateY(-40px) translateX(-20px);
+}
