@@ -1,12 +1,11 @@
 import Banner from "./Banner/Banner";
+import Choose from "./Choose/Choose";
 
 const Home = () => {
     return (
         <div>
             <Banner></Banner>
-            <p>
-                pppppppp
-            </p>
+            <Choose></Choose>
             
         </div>
     );

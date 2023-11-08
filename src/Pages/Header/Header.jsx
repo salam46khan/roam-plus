@@ -61,6 +61,8 @@ const Header = () => {
     const navlinks = <>
         <li><NavLink to={'/'}>Home</NavLink></li>
         <li><NavLink to={'/services'}>Services</NavLink></li>
+        {
+        user ?
         <li tabIndex={0}>
             <details>
                 <summary>Deshbord</summary>
@@ -71,6 +73,8 @@ const Header = () => {
                 </ul>
             </details>
         </li>
+        : ''
+        }
     </>
     return (
         <div className={`${scroll ? 'dark:bg-slate-800 sticky top-0 left-0 shadow-lg dark:text-white bg-slate-50' : 'text-white'}  top-0 left-0 w-full absolute z-50`}>

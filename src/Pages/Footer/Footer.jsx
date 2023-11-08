@@ -4,10 +4,13 @@ import logo from '../../../public/img/logo.png'
 import { Link } from 'react-router-dom';
 const Footer = () => {
     return (
-        <div className="py-10 p-3 font-Normal dark:bg-slate-900 dark:text-base-100">
+        <div className="py-10 p-3 font-Normal dark:bg-slate-800 dark:text-base-100">
             <div className="container mx-auto flex flex-col md:flex-row justify-between gap-4">
                 <div className=" w-full md:w-1/3">
+                    <div className='flex items-center '>
                     <img className='w-[160px]' src={logo} alt="" />
+                    <h2 className='text-3xl lg:text-4xl font-BannerTitle font-bold'>Roam Plus</h2>
+                    </div>
                     <p>
                     Roam Plus is a leading guideline services organization, specializing in providing comprehensive support and guidance for tourists from around the world.
                     </p>

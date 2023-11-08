@@ -10,7 +10,7 @@ export default {
       fontFamily: {
         BannerTitle :['Permanent Marker', 'cursive'],
         Normal: ['Montserrat', 'sans-serif'],
-        Title: ['Donegal One', 'serif']
+        Title: ['RocknRoll One', 'sans-serif']
       }
     },
   },

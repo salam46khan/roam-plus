@@ -6,6 +6,7 @@ import Services from '../Pages/Services/Services';
 import Error from '../Pages/Error/Error';
 import Login from '../Pages/Login/Login';
 import Signup from '../Pages/Login/Signup';
+import PrivateRouter from './PrivateRouter';
 
 const MainRouter = createBrowserRouter([
     {
@@ -23,7 +24,7 @@ const MainRouter = createBrowserRouter([
             },
             {
                 path: '/services',
-                element: <Services></Services>
+                element: <PrivateRouter><Services></Services></PrivateRouter>
             },
             {
                 path: '/login',

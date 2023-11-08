@@ -1,7 +1,7 @@
 .banner{
     min-height: 500px;
     max-height: auto;
-    background-image: linear-gradient(50deg, #35404e92, #35404e90),url(../../../../public/img/banner.gif);
+    background-image: linear-gradient(0deg, #1E293B 2%, #35404e93, #1d324f5a),url(../../../../public/img/banner.gif);
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
