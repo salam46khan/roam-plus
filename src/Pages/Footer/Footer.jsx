@@ -46,11 +46,11 @@ const Footer = () => {
                     <h3 className="font-Title text-3xl text-pink-400">Follow</h3>
                     <hr className='w-2/3 border-slate-800 dark:border-base-200' />
                     <div className='flex flex-wrap gap-3 text-2xl mt-2'>
-                        <Link className=' rounded-full p-2 hover:bg-pink-400 duration-400' to={'/'}><FaFacebookF></FaFacebookF></Link>
-                        <Link className=' rounded-full p-2 hover:bg-pink-400 duration-700' to={'/'}><FaYoutube></FaYoutube></Link>
-                        <Link className=' rounded-full p-2 hover:bg-pink-400 duration-700' to={'/'}><FaTwitter></FaTwitter></Link>
-                        <Link className=' rounded-full p-2 hover:bg-pink-400 duration-700' to={'/'}><FaInstagram></FaInstagram></Link>
-                        <Link className=' rounded-full p-2 hover:bg-pink-400 duration-700' to={'/'}><FaTelegram></FaTelegram></Link>
+                        <Link className=' rounded-full p-2 hover:bg-pink-400 duration-500' to={'/'}><FaFacebookF></FaFacebookF></Link>
+                        <Link className=' rounded-full p-2 hover:bg-pink-400 duration-500' to={'/'}><FaYoutube></FaYoutube></Link>
+                        <Link className=' rounded-full p-2 hover:bg-pink-400 duration-500' to={'/'}><FaTwitter></FaTwitter></Link>
+                        <Link className=' rounded-full p-2 hover:bg-pink-400 duration-500' to={'/'}><FaInstagram></FaInstagram></Link>
+                        <Link className=' rounded-full p-2 hover:bg-pink-400 duration-500' to={'/'}><FaTelegram></FaTelegram></Link>
                         
                     </div>
                 </div>

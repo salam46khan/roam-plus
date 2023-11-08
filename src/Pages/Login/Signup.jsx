@@ -2,21 +2,58 @@ import { useLottie } from "lottie-react";
 import { FcGoogle } from 'react-icons/fc'
 import loginAni from "../../assets/loginAni.json";
 import { Link } from 'react-router-dom';
+import { useContext, useState } from "react";
+import { AuthContext } from "../../Provider/AuthProvider";
+import { updateProfile } from "firebase/auth";
 
 const Signup = () => {
+    const [error, setError] = useState('');
+    const { createUser} = useContext(AuthContext)
+
     const handleSingup = event => {
         event.preventDefault()
         const form = event.target;
         const name = form.name.value;
         const email = form.email.value;
         const password = form.password.value;
-        console.log(name,email, password);
+        const imgURL = form.imgURL.value;
+        // console.log(name,email, password, imgURL);
+
+        setError('')
+
+        if (!/[$#@%&*]/.test(password)) {
+            setError('Password should be a spacial character')
+            return
+        }
+        if (password.length < 6) {
+            setError('Password should be six character')
+            return
+        }
+        if (!/[A-Z]/.test(password)) {
+            setError('Password should be one upper case letter')
+            return
+        }
+
+        createUser(email, password)
+            .then(result =>{
+                console.log(result.user);
+                updateProfile(result.user, {
+                    displayName: name,
+                    photoURL: imgURL
+                })
+            })
+            .catch(error =>{
+                console.log(error);
+                setError(error.message)
+            })
     }
     const options = {
         animationData: loginAni,
         loop: true
     };
     const { View } = useLottie(options);
+
+
     return (
         <div className="login font-Normal dark:text-white pt-10 p-3">
             <div className='container mx-auto py-10 '>
@@ -41,6 +78,10 @@ const Signup = () => {
                                 <input className='w-full' type="password" name='password' required />
                                 <span>Password</span>
                             </div>
+                            <div className="input-box">
+                                <input className='w-full' type="text" name='imgURL' required />
+                                <span>Image Link</span>
+                            </div>
                             <div>
                                 <input className='w-full bg-pink-400 rounded-full mt-5 shadow-md p-3 uppercase' type="submit" value="Sign Up" />
                             </div>
@@ -60,6 +101,10 @@ const Signup = () => {
                             </button>
 
                             <p className='text-center mt-3'>If have an account, <span className='text-pink-400 font-semibold'><Link to={'/login'}>Log In</Link></span></p>
+
+                            {
+                                error ? <p className="text-red-400 text-center mt-2">{error}</p> : ''
+                            }
                         </div>
                     </div>
                 </div>

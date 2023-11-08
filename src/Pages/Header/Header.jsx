@@ -1,14 +1,27 @@
 import { Link, NavLink } from "react-router-dom";
 import './Header.css'
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import logo from '../../../public/img/logo.png';
 import { ImSun } from 'react-icons/im'
 import { FiMoon } from 'react-icons/fi'
 import { BiUser } from 'react-icons/bi'
+import { AuthContext } from "../../Provider/AuthProvider";
+import { FaSignOutAlt } from "react-icons/fa";
 
 const Header = () => {
     const [scroll, setScroll] = useState(false);
     const [mood, setMood] = useState('light')
+    const { user, logOut } = useContext(AuthContext)
+
+    const handleLogout = () => {
+        logOut()
+            .then(() => {
+                console.log('log out successful');
+            })
+            .catch(error => {
+                console.log(error);
+            })
+    }
 
     useEffect(() => {
         const handleScroll = () => {
@@ -85,16 +98,30 @@ const Header = () => {
                     </ul>
                 </div>
                 <div className="navbar-end">
-                    <button onClick={handleMood} className=" bg-pink-400 w-10 h-10 text-xl flex justify-center items-center rounded-full">
+
+                    {
+                        user ? <div className="h-10 w-10 rounded-full overflow-hidden m-1 tooltip" data-tip="Log Out">
+                            <img className="w-full " src={user.photoURL} alt="" />
+                        </div> : ''
+                    }
+                    <button onClick={handleMood} className=" bg-pink-400 w-10 h-10 text-xl flex justify-center items-center rounded-full m-1">
                         {
                             mood == "light" ? <FiMoon></FiMoon> : <ImSun></ImSun>
                         }
                     </button>
-                    <button className="bg-pink-400 w-10 h-10 text-xl flex justify-center items-center rounded-full hover:text-white ml-2">
-                        <Link to={'/login'}>
-                            <BiUser></BiUser>
-                        </Link>
-                    </button>
+
+                    {
+                        user ?
+                            <button onClick={handleLogout} className="bg-pink-400 w-10 h-10 text-xl flex justify-center items-center rounded-full hover:text-white m-1 tooltip tooltip-bottom" data-tip="Log Out"> <FaSignOutAlt></FaSignOutAlt> </button>
+                            :
+                            <button className="bg-pink-400 w-10 h-10 text-xl  rounded-full m-1 tooltip tooltip-bottom overflow-hidden hover:text-slate-800" data-tip="Log In">
+                                <Link className="w-full h-full flex justify-center items-center " to={'/login'}>
+                                    <BiUser></BiUser>
+                                </Link>
+                            </button>
+                    }
+
+
                 </div>
             </div>
         </div>

@@ -3,15 +3,31 @@ import { useLottie } from "lottie-react";
 import {FcGoogle} from 'react-icons/fc'
 import loginAni from "../../assets/loginAni.json";
 import { Link } from 'react-router-dom';
-
+import { useContext, useState } from 'react';
+import { AuthContext } from '../../Provider/AuthProvider';
 
 const Login = () => {
+    const [error, setError] = useState('');
+    const {logInUser} = useContext(AuthContext)
+    console.log(error);
+
     const handleLogIn = event => {
         event.preventDefault()
         const from = event.target;
         const email = from.email.value;
         const password = from.password.value;
         console.log(email, password);
+        setError('')
+
+        logInUser(email, password)
+         .then(result =>{
+            console.log(result.user);
+         })
+         .catch(error =>{
+            console.log(error);
+            setError(error.message)
+         })
+        
     }
 
     const options = {
@@ -41,7 +57,7 @@ const Login = () => {
                                 <span>Password</span>
                             </div>
                             <div>
-                                <input className='w-full bg-pink-400 rounded-full mt-5 shadow-md p-3 uppercase' type="submit" value="Sign Up" />
+                                <input className='w-full bg-pink-400 rounded-full mt-5 shadow-md p-3 uppercase' type="submit" value="Log In" />
                             </div>
                         </form>
                         <div className='mt-6'>
@@ -59,6 +75,10 @@ const Login = () => {
                             </button>
 
                             <p className='text-center mt-3'>Does not have an account, <span className='text-pink-400 font-semibold'><Link to={'/signup'}>Sign Up</Link></span></p>
+
+                            {
+                                error? <p className='text-center mt-2 text-red-400'>{error}</p>: ''
+                            }
                         </div>
                     </div>
                 </div>
