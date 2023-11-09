@@ -3,7 +3,7 @@ import {Link} from 'react-router-dom'
 const ServiceSecItem = ({ service }) => {
     const { service_image, service_name, service_description, provider_image, provider_name, service_area, service_price } = service
     return (
-        <div className='flex flex-col md:flex-row gap-4 overflow-hidden  rounded-lg hover:bg-[#00000016] bg-[#0000000b] dark:bg-[#ffffff37] hover:dark:bg-[#ffffff5e] shadow-inner dark:shadow-[#fff8] z-10'>
+        <div className='flex flex-col md:flex-row gap-4 overflow-hidden  rounded-lg hover:bg-[#00000016] bg-[#0000000b] dark:bg-[#ffffff37] hover:dark:bg-[#ffffff5e] shadow-inner dark:shadow-[#fff8] z-10 duration-300'>
             <div className='w-full md:w-4/12 md:shrink-0 '>
                 <img className='object-cover w-full md:h-full' src={service_image} alt="" />
             </div>

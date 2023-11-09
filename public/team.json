@@ -1,0 +1,29 @@
+[
+    {
+        "id":1,
+        "name": "Salam Khan",
+        "prof": "CEO",
+        "img": "/src/assets/team/salam.jpg",
+        "fb_link": "",
+        "ins_link": "",
+        "twe_link": ""
+    },
+    {
+        "id":2,
+        "name": "John Doe",
+        "prof": "/src/assets/team/john (1).jpg",
+        "img": "link",
+        "fb_link": "",
+        "ins_link": "",
+        "twe_link": ""
+    },
+    {
+        "id":3,
+        "name": "Rohim Saheb",
+        "prof": "Co-Founder",
+        "img": "/src/assets/team/rohim.jpg",
+        "fb_link": "",
+        "ins_link": "",
+        "twe_link": ""
+    }
+]
