@@ -1,0 +1,42 @@
+[
+    {
+        "service_id": 1,
+        "service_image": "../src/assets/service/akasnila.jpg",
+        "service_name": "Akash Nila Tourist Spot",
+        "service_description": "Discover the heart of the city with our guided tour showcasing iconic landmarks and hidden gems.",
+        "provider_image": "../src/assets/service/p-1.jpeg",
+        "provider_name": "Salam Khan",
+        "service_area": "Shymnagor",
+        "service_price": "$49.99"
+    },
+    {
+        "service_id": 2,
+        "service_image": "../src/assets/service/mandarbaria.jpg",
+        "service_name": "Mandarbaria Sea Beach",
+        "service_description": "Embark on an adrenaline-pumping trek through scenic trails and breathtaking landscapes.",
+        "provider_image": "../src/assets/service/p-2.jpeg",
+        "provider_name": "NatureAdventures Ltd.",
+        "service_area": "Satkhira",
+        "service_price": "$79.99"
+    },
+    {
+        "service_id": 3,
+        "service_image": "../src/assets/service/sundarban.png",
+        "service_name": "Sundorban Eco park",
+        "service_description": "Immerse yourself in the rich cultural heritage of the region with our guided walking tour.",
+        "provider_image": "../src/assets/service/p-3.jpeg",
+        "provider_name": "CulturalExplorers Co.",
+        "service_area": "Shymnagor",
+        "service_price": "$39.99"
+    },
+    {
+        "service_id": 4,
+        "service_image": "../src/assets/service/village.jpg",
+        "service_name": "Village of Satkhira",
+        "service_description": "Unwind and relax on the sun-kissed beaches while enjoying a personalized beach tour experience.",
+        "provider_image": "../src/assets/service/p-4.jpeg",
+        "provider_name": "SunsetEscapes Travel",
+        "service_area": "Kaligonj",
+        "service_price": "$59.99"
+    }
+]

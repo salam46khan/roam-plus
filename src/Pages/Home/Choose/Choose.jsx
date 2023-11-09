@@ -17,7 +17,7 @@ const Choose = () => {
             <div className="absolute hidden md:block lg:h-[600px] lg:w-[600px] md:h-[400px] md:w-[400px] rounded-full bg-gradient-to-r from-purple-500  to-pink-500  left-[-25%] top-10 z-0"></div>
             <div className="absolute hidden md:block h-[200px] w-[200px] rounded-full bg-gradient-to-r from-purple-500  to-pink-500 right-0 bottom-0 z-0"></div>
             <div className="container mx-auto z-10">
-                <div className="text-center z-10">
+                <div className="text-center z-10 space-y-3">
                     <h2 className="font-Title text-4xl">Why Choose Us?</h2>
                     <p className="w-full md:w-1/2 mx-auto z-10">
                     With Roam Plus, you are not just visiting a destination; you are immersing yourself in its soul.
