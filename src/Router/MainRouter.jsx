@@ -7,6 +7,9 @@ import Error from '../Pages/Error/Error';
 import Login from '../Pages/Login/Login';
 import Signup from '../Pages/Login/Signup';
 import PrivateRouter from './PrivateRouter';
+import AddService from '../Pages/AddService/AddService';
+import MySchedules from '../Pages/MySchedules/MySchedules';
+import MyServices from '../Pages/MyServices/MyServices';
 
 const MainRouter = createBrowserRouter([
     {
@@ -33,6 +36,18 @@ const MainRouter = createBrowserRouter([
             {
                 path: '/signup',
                 element: <Signup></Signup>
+            },
+            {
+                path: '/addservice',
+                element: <AddService></AddService>
+            },
+            {
+                path: '/myschedules',
+                element: <MySchedules></MySchedules>
+            },
+            {
+                path: '/myservices',
+                element: <MyServices></MyServices>
             }
         ]
     }

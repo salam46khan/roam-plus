@@ -67,9 +67,9 @@ const Header = () => {
             <details>
                 <summary>Deshbord</summary>
                 <ul className={`${scroll ? 'dark:bg-slate-800 bg-slate-50 dark:text-white' : 'bg-transparent'} rounded-t-none rounded-md`}>
-                    <li><NavLink to={'/a'}>a</NavLink></li>
-                    <li><NavLink to={'/b'}>b</NavLink></li>
-                    <li><NavLink to={'/c'}>c</NavLink></li>
+                    <li><NavLink to={'/myservices'}>My Services</NavLink></li>
+                    <li><NavLink to={'/addservice'}>Add Service</NavLink></li>
+                    <li><NavLink to={'/myschedules'}>My Schedules </NavLink></li>
                 </ul>
             </details>
         </li>
