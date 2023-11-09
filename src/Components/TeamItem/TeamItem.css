@@ -1,0 +1,31 @@
+.team{
+    height: 400px;
+    transition: 0.4s;
+}
+.team .team-img{
+    height: 280px;
+    width: 100%;
+    transition: 0.4s;
+    margin: 0 auto;
+}
+.team:hover .team-img{
+    height: 180px;
+    width: 180px;
+    border-radius: 50%;
+}
+.team .prof{
+    opacity: 0;
+    transition: 0.8s;
+}
+.team:hover .prof{
+    opacity: 1;
+}
+.team .link-group{
+    opacity: 0;
+    font-size: 25px;
+    transition: 0.8s;
+}
+.team:hover .link-group{
+    opacity: 1;
+
+}

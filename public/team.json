@@ -11,8 +11,8 @@
     {
         "id":2,
         "name": "John Doe",
-        "prof": "/src/assets/team/john (1).jpg",
-        "img": "link",
+        "prof": "Manager",
+        "img": "/src/assets/team/john.jpg",
         "fb_link": "",
         "ins_link": "",
         "twe_link": ""
