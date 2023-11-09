@@ -1,6 +1,7 @@
 import AllBanner from "../../Components/AllBanner/AllBanner";
 
 const Services = () => {
+    
     return (
         <div className="dark:bg-slate-800">
             <AllBanner>Services</AllBanner>
