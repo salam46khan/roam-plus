@@ -1,6 +1,5 @@
 [
     {
-        "id":1,
         "name": "Salam Khan",
         "prof": "CEO",
         "img": "/src/assets/team/salam.jpg",
@@ -9,7 +8,6 @@
         "twe_link": ""
     },
     {
-        "id":2,
         "name": "John Doe",
         "prof": "Manager",
         "img": "/src/assets/team/john.jpg",
@@ -18,7 +16,6 @@
         "twe_link": ""
     },
     {
-        "id":3,
         "name": "Rohim Saheb",
         "prof": "Co-Founder",
         "img": "/src/assets/team/rohim.jpg",

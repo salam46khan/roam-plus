@@ -1,48 +1,40 @@
 [
     {
-        "feature_id": 1,
         "feature_name": "Expert Guides",
         "description": "Explore with our expert guides who are passionate locals, providing in-depth knowledge and unique insights into each destination.",
         "icon": "../src/assets/icon/home.gif"
     },
     {
-        "feature_id": 2,
         "feature_name": "Customized Experiences",
         "description": "Tailor your adventure to match your interests. Choose from a variety of themed tours for a personalized and unforgettable journey.",
         "icon": "../src/assets/icon/review.gif"
     },
     {
-        "feature_id": 3,
         "feature_name": "Safety Assurance",
         "description": "Your safety is our priority. Enjoy worry-free exploration with small group sizes, certified guides, and adherence to the highest safety standards.",
         "icon": "../src/assets/icon/policeman.gif"
     },
     {
-        "feature_id": 4,
         "feature_name": "Transparent Pricing",
         "description": "No hidden fees or surprises. Experience clear communication and transparent pricing for a straightforward booking process.",
         "icon": "../src/assets/icon/money-bag.gif"
     },
     {
-        "feature_id": 5,
         "feature_name": "Local Insights",
         "description": "Discover hidden gems and local secrets with our guides, offering insights that go beyond the typical tourist experience.",
         "icon": "../src/assets/icon/map.gif"
     },
     {
-        "feature_id": 6,
         "feature_name": "Community Connection",
         "description": "Join a vibrant community of like-minded travelers. Share your stories, connect with others, and make the world your playground.",
         "icon": "../src/assets/icon/way.gif"
     },
     {
-        "feature_id": 7,
         "feature_name": "Flexible Booking",
         "description": "Book with ease and flexibility. Our user-friendly platform allows you to schedule, modify, or cancel your bookings hassle-free.",
         "icon": "../src/assets/icon/checklist.gif"
     },
     {
-        "feature_id": 8,
         "feature_name": "Multilingual Support",
         "description": "Feel at home wherever you go with our multilingual support. Communicate seamlessly with guides and fellow travelers in your preferred language.",
         "icon": "../src/assets/icon/support.gif"

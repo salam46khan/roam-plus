@@ -4,7 +4,7 @@ import TeamItem from "../../../Components/TeamItem/TeamItem";
 const Team = () => {
     const [team, setTeam] = useState([]);
     useEffect(()=>{
-        fetch('team.json')
+        fetch('http://localhost:5000/team')
             .then(res => res.json())
             .then(data => setTeam(data))
     },[])
@@ -19,7 +19,7 @@ const Team = () => {
                 </div>
                 <div className="py-10 flex justify-center gap-5 flex-col md:flex-row text-center">
                     {
-                        team.map(team => <TeamItem key={team.id} team={team}></TeamItem>)
+                        team.map(team => <TeamItem key={team._id} team={team}></TeamItem>)
                     }
                 </div>
             </div>

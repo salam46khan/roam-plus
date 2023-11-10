@@ -6,7 +6,7 @@ import FeatureItems from "../../../Components/FeatureItems/FeatureItems";
 const Choose = () => {
     const [feature, Setfeature] = useState([])
     useEffect(()=>{
-        fetch('feature.json')
+        fetch('http://localhost:5000/feature')
         .then(res => res.json())
         .then(data => Setfeature(data))
     },[])

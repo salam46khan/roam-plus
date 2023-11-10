@@ -19,7 +19,19 @@ const AddService = () => {
 
         const provider_name = user?.displayName;
         const provider_img = user?.photoURL;
+
         const AddService = {service_name, service_area, price, photoURL, discription, provider_img, provider_name}
+
+        fetch('http://localhost:5000/services', {
+            method: "POST",
+            headers: {
+                'content-type' : 'application/json'
+            },
+            body: JSON.stringify(AddService)
+        })
+        .then(res => res.json())
+        .then(data => console.log(data))
+        
         console.log(AddService);
 
     }

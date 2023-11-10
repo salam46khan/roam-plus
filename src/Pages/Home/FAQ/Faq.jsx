@@ -6,7 +6,7 @@ import FaqItem from "../../../Components/FaqItem/FaqItem";
 const Faq = () => {
     const [service, setService] = useState([])
     useEffect(() => {
-        fetch('Service.json')
+        fetch('http://localhost:5000/faq')
             .then(res => res.json())
             .then(data => setService(data))
     }, [])
@@ -36,7 +36,7 @@ const Faq = () => {
                     </div>
                     <div className="w-full md:w-1/2 join join-vertical">
                         {
-                            service.map(faq => <FaqItem faq={faq} key={faq.service_id}></FaqItem>)
+                            service.map(faq => <FaqItem faq={faq} key={faq._id}></FaqItem>)
                         }
                     </div>
                 </div>
