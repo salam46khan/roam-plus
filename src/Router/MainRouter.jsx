@@ -39,7 +39,7 @@ const MainRouter = createBrowserRouter([
             },
             {
                 path: '/addservice',
-                element: <AddService></AddService>
+                element: <PrivateRouter><AddService></AddService></PrivateRouter>
             },
             {
                 path: '/myschedules',

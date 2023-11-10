@@ -8,7 +8,7 @@ import { updateProfile } from "firebase/auth";
 
 const Signup = () => {
     const [error, setError] = useState('');
-    const { createUser} = useContext(AuthContext)
+    const { createUser, googleSignIn} = useContext(AuthContext)
 
     const handleSingup = event => {
         event.preventDefault()
@@ -43,6 +43,18 @@ const Signup = () => {
                 })
             })
             .catch(error =>{
+                console.log(error);
+                setError(error.message)
+            })
+    }
+
+    const handleGoogleLogin = () =>{
+        setError('')
+        googleSignIn()
+            .then(result =>{
+                console.log(result.user);
+            })
+            .catch(error=>{
                 console.log(error);
                 setError(error.message)
             })
@@ -92,7 +104,7 @@ const Signup = () => {
                                 <hr className='absolute top-0 w-2/5 right-0 border-slate-800 dark:border-base-200' />
                                 <span className='absolute -top-5 translate-x-[-50%] left-[50%] p-1 text-xl'>or</span>
                             </div>
-                            <button className='w-full bg-pink-400 rounded-full mt-5 shadow-md p-3 uppercase '>
+                            <button onClick={handleGoogleLogin} className='w-full bg-pink-400 rounded-full mt-5 shadow-md p-3 uppercase '>
                                 <span>
                                     <FcGoogle className='inline-block mr-1 text-xl'></FcGoogle>
                                 </span>

@@ -13,6 +13,7 @@ const Header = () => {
     const [mood, setMood] = useState('light')
     const { user, logOut } = useContext(AuthContext)
 
+    console.log('from header:', user);
     const handleLogout = () => {
         logOut()
             .then(() => {

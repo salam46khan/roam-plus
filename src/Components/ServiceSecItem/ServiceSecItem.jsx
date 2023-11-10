@@ -1,5 +1,5 @@
 import PropTypes from 'prop-types';
-import {Link} from 'react-router-dom'
+import { Link } from 'react-router-dom'
 const ServiceSecItem = ({ service }) => {
     const { service_image, service_name, service_description, provider_image, provider_name, service_area, service_price } = service
     return (
@@ -13,16 +13,16 @@ const ServiceSecItem = ({ service }) => {
                 <p className='py-2'>{service_description}</p>
                 <h4 className='text-2xl font-thin text-pink-400'>Price: {service_price} tk / per day</h4>
                 <hr className='border-slate-800 dark:border-base-200 mt-3' />
-                <div className='flex justify-between items-center py-2'>
+                <div className='flex flex-col md:flex-row justify-between  md:items-center gap-2 py-2'>
                     <div className='flex items-center'>
                         <div className='h-16 w-16 rounded-full overflow-hidden mr-3'>
                             <img className='w-full h-full' src={provider_image} alt="" />
                         </div>
                         <h3 className='text-xl font-semibold'>{provider_name}</h3>
                     </div>
-                    
+
                     <Link to={'/ab'}>
-                    <button className="button bg-[#0001] dark:bg-[#fff5]">Details</button>
+                        <button className="button bg-[#0001] dark:bg-[#fff5]">Details</button>
                     </Link>
                 </div>
             </div>

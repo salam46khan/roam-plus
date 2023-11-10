@@ -86,3 +86,15 @@
 .input-box input:valid~span{
     transform: translateY(-40px) translateX(-20px);
 }
+
+
+/* add service input style  */
+.inp{
+    padding: 8px 15px;
+    background: transparent;
+    border-bottom: 2px solid;
+    width: 100%;
+}
+.inp:focus{
+    outline: none;
+}
