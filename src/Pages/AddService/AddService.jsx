@@ -3,12 +3,14 @@ import { useLottie } from "lottie-react";
 import addSerAni from '../../assets/addSer.json'
 import { useContext } from "react";
 import { AuthContext } from "../../Provider/AuthProvider";
+import Swal from 'sweetalert2';
+
+
 const AddService = () => {
     const { user } = useContext(AuthContext);
-    console.log(user);
 
     const handleAddService = event => {
-        
+
         event.preventDefault();
         const form = event.target;
         const service_name = form.serviceName.value;
@@ -19,20 +21,29 @@ const AddService = () => {
 
         const provider_name = user?.displayName;
         const provider_img = user?.photoURL;
+        const provider_email = user?.email;
 
-        const AddService = {service_name, service_area, price, photoURL, discription, provider_img, provider_name}
+        const AddService = { service_name, service_area, price, photoURL, discription, provider_img, provider_name, provider_email }
 
         fetch('http://localhost:5000/services', {
             method: "POST",
             headers: {
-                'content-type' : 'application/json'
+                'content-type': 'application/json'
             },
             body: JSON.stringify(AddService)
         })
-        .then(res => res.json())
-        .then(data => console.log(data))
-        
-        console.log(AddService);
+            .then(res => res.json())
+            .then(data => {
+                console.log(data);
+                if(data.acknowledged){
+                    Swal.fire({
+                        title: 'Success!',
+                        text: 'Your Service Add successfuly',
+                        icon: 'success',
+                        confirmButtonText: 'ok'
+                    })
+                }
+            })
 
     }
 
@@ -53,7 +64,22 @@ const AddService = () => {
                                     <input className="inp" type="text" placeholder="Service Name" name="serviceName" required />
                                 </div>
                                 <div className="w-full lg:w-1/2">
-                                    <input className="inp" type="text" placeholder="Service Area" name="serviceArea" required />
+                                    {/* <input className="inp" type="text" placeholder="Service Area" name="serviceArea" required /> */}
+
+                                    <select className="inp select-secondary" name="serviceArea">
+                                        <option value="Khulna">Khulna</option>
+                                        <option value="Bagherhat">Bagherhat</option>
+                                        <option value="Sathkhira">Sathkhira</option>
+                                        <option value="Jessore">Jessore</option>
+                                        <option value="Magura">Magura</option>
+                                        <option value="Jhenaidah">Jhenaidah</option>
+                                        <option value="Narail">Narail</option>
+                                        <option value="Jhenaidah">Jhenaidah</option>
+                                        <option value="Kushtia">Kushtia</option>
+                                        <option value="Chuadanga">Chuadanga</option>
+                                        <option value="Meherpur">Meherpur</option>
+
+                                    </select>
                                 </div>
                             </div>
                             <div className="flex flex-col lg:flex-row gap-4 mt-4">

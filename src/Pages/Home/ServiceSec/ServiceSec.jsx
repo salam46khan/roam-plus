@@ -23,7 +23,7 @@ const ServiceSec = () => {
                 </div>
                 <div className="py-10 grid grid-cols-1 md:grid-cols-2 gap-5">
                     {
-                        service.map(service => <ServiceSecItem key={service.service_id} service={service}></ServiceSecItem>)
+                        service.map(service => <ServiceSecItem key={service._id} service={service}></ServiceSecItem>)
                     }
                 </div>
                 <div className="text-center">

@@ -23,7 +23,8 @@
     "react-shimmer-effects": "^1.0.3",
     "react-simple-typewriter": "^5.0.1",
     "react-wavify": "^1.9.0",
-    "sort-by": "^1.2.0"
+    "sort-by": "^1.2.0",
+    "sweetalert2": "^11.9.0"
   },
   "devDependencies": {
     "@types/react": "^18.2.15",
