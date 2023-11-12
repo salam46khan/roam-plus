@@ -29,7 +29,8 @@ const MainRouter = createBrowserRouter([
             },
             {
                 path: '/services',
-                element: <PrivateRouter><Services></Services></PrivateRouter>
+                element: <PrivateRouter><Services></Services></PrivateRouter>,
+                loader: ()=> fetch('http://localhost:5000/services')
             },
             {
                 path: '/login',

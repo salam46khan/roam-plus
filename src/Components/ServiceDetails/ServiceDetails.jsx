@@ -1,10 +1,63 @@
 import { useLoaderData } from "react-router-dom";
 import AllBanner from "../AllBanner/AllBanner";
+import Swal from "sweetalert2";
+import { useContext } from "react";
+import { AuthContext } from "../../Provider/AuthProvider";
+
 
 const ServiceDetails = () => {
     const SingleService = useLoaderData()
+    const {user} = useContext(AuthContext)
+    console.log(user);
 
-    const { photoURL, service_name, discription, provider_img, provider_name, service_area, price} = SingleService;
+    const { photoURL, service_name, discription, provider_img, provider_name, provider_email, service_area, price } = SingleService;
+
+    const handlePurchase = async () => {
+        console.log('ok');
+        const { value: date } = await Swal.fire({
+            title: "Multiple inputs",
+            html: `
+              <input type="date" id="swal-input1" class="swal2-input">
+            `,
+            focusConfirm: false,
+            preConfirm: () => {
+              return document.getElementById("swal-input1").value
+            }
+          });
+          if (date) {
+            
+            const bookingData ={
+                date,
+                service_name,
+                servicePhoto:SingleService.photoURL,
+                price,
+                service_area,
+                provider_email,
+                user_email: user.email,
+                status: 'pending'
+            }
+            console.log(bookingData);
+            fetch('http://localhost:5000/booking',{
+                method: "POST",
+                headers: {
+                    'content-type': 'application/json'
+                },
+                body: JSON.stringify(bookingData)
+            })
+            .then(res => res.json())
+            .then(data => {
+                console.log(data);
+                if(data.acknowledged){
+                    Swal.fire({
+                        title: 'Success!',
+                        text: 'Successfuly Purchase',
+                        icon: 'success',
+                        confirmButtonText: 'ok'
+                    })
+                }
+            })
+          }
+    }
     return (
         <div className="dark:bg-slate-800 font-Normal">
             <AllBanner>Services details</AllBanner>
@@ -27,7 +80,7 @@ const ServiceDetails = () => {
                         <p className="text-xl font-bold">
                             Price: {price} tk / per day
                         </p>
-                        <button className="button bg-[#0001] dark:bg-[#fff5]">Purchase</button>
+                        <button onClick={handlePurchase} className="button bg-[#0001] dark:bg-[#fff5]">Purchase</button>
                     </div>
                 </div>
             </div>

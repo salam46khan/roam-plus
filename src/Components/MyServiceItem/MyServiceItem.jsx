@@ -10,7 +10,7 @@ const MyServiceItem = ({ mySer, handleDelete }) => {
     return (
         <tr>
             <td className=''>
-                <img className='h-20 w-28 object-cover' src={photoURL} alt="" />
+                <img className='md:h-20 md:w-28 object-cover' src={photoURL} alt="" />
             </td>
             <td>
                 <h2 className='font-bold text-xl'>{service_name}</h2>
