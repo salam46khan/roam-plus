@@ -16,7 +16,7 @@ const Services = () => {
         area = event.target.value
     }
     const handleClick = () => {
-        fetch(`http://localhost:5000/services?name=${area}`)
+        fetch(`https://roam-plus-server.vercel.app/services?name=${area}`)
             .then(res => res.json())
             .then(data => {
                 setServices(data)
@@ -27,7 +27,7 @@ const Services = () => {
 
     const handleFilter = event => {
         const area = event.target.value;
-        fetch(`http://localhost:5000/services-filter?area=${area}`)
+        fetch(`https://roam-plus-server.vercel.app/services-filter?area=${area}`)
             .then(res => res.json())
             .then(data => setServices(data))
     }

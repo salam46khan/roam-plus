@@ -11,13 +11,13 @@ const MySchedules = () => {
     const [pendingWork, SetpendingWork] = useState([])
     const { user } = useContext(AuthContext)
     useEffect(() => {
-        fetch(`http://localhost:5000/my-booking?email=${user.email}`)
+        fetch(`https://roam-plus-server.vercel.app/my-booking?email=${user.email}`)
             .then(res => res.json())
             .then(data => setBooked(data))
     }, [user])
 
     useEffect(() => {
-        fetch(`http://localhost:5000/my-pending-work?email=${user.email}`)
+        fetch(`https://roam-plus-server.vercel.app/my-pending-work?email=${user.email}`)
             .then(res => res.json())
             .then(data => SetpendingWork(data))
     }, [user])

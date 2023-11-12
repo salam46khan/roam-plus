@@ -30,7 +30,7 @@ const MainRouter = createBrowserRouter([
             {
                 path: '/services',
                 element: <PrivateRouter><Services></Services></PrivateRouter>,
-                loader: ()=> fetch('http://localhost:5000/services')
+                loader: ()=> fetch('https://roam-plus-server.vercel.app/services')
             },
             {
                 path: '/login',
@@ -55,12 +55,12 @@ const MainRouter = createBrowserRouter([
             {
                 path: '/service/:id',
                 element: <PrivateRouter><ServiceDetails></ServiceDetails></PrivateRouter>,
-                loader: ({params}) => fetch(`http://localhost:5000/services/${params.id}`)
+                loader: ({params}) => fetch(`https://roam-plus-server.vercel.app/services/${params.id}`)
             },
             {
                 path: '/update/:id',
                 element: <PrivateRouter><UpdateService></UpdateService></PrivateRouter>,
-                loader: ({params}) => fetch(`http://localhost:5000/services/${params.id}`)
+                loader: ({params}) => fetch(`https://roam-plus-server.vercel.app/services/${params.id}`)
             }
         ]
     }

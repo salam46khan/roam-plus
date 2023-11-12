@@ -6,7 +6,7 @@ import FeatureItems from "../../../Components/FeatureItems/FeatureItems";
 const Choose = () => {
     const [feature, Setfeature] = useState([])
     useEffect(()=>{
-        fetch('http://localhost:5000/feature')
+        fetch('https://roam-plus-server.vercel.app/feature')
         .then(res => res.json())
         .then(data => Setfeature(data))
     },[])

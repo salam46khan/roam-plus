@@ -4,7 +4,7 @@ import TeamItem from "../../../Components/TeamItem/TeamItem";
 const Team = () => {
     const [team, setTeam] = useState([]);
     useEffect(()=>{
-        fetch('http://localhost:5000/team')
+        fetch('https://roam-plus-server.vercel.app/team')
             .then(res => res.json())
             .then(data => setTeam(data))
     },[])

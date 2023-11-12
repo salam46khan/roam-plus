@@ -6,7 +6,7 @@ import FaqItem from "../../../Components/FaqItem/FaqItem";
 const Faq = () => {
     const [service, setService] = useState([])
     useEffect(() => {
-        fetch('http://localhost:5000/faq')
+        fetch('https://roam-plus-server.vercel.app/faq')
             .then(res => res.json())
             .then(data => setService(data))
     }, [])

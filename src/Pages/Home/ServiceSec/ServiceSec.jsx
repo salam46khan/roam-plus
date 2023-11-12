@@ -5,7 +5,7 @@ import {Link} from 'react-router-dom'
 const ServiceSec = () => {
     const [service, setService] = useState([])
     useEffect(() => {
-        fetch('http://localhost:5000/home-services')
+        fetch('https://roam-plus-server.vercel.app/home-services')
             .then(res => res.json())
             .then(data => setService(data))
     }, [])

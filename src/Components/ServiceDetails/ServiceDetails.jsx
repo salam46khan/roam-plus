@@ -37,7 +37,7 @@ const ServiceDetails = () => {
                 status: 'pending'
             }
             console.log(bookingData);
-            fetch('http://localhost:5000/booking',{
+            fetch('https://roam-plus-server.vercel.app/booking',{
                 method: "POST",
                 headers: {
                     'content-type': 'application/json'

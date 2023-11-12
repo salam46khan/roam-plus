@@ -6,7 +6,7 @@ const PendingWork = ({ pending }) => {
     const handleStatus = event =>{
         const status = event.target.value;
         const newStatus = {status}
-        fetch(`http://localhost:5000/booking/${_id}`,{
+        fetch(`https://roam-plus-server.vercel.app/booking/${_id}`,{
             method: "PUT",
             headers: {
                 'content-type': 'application/json'

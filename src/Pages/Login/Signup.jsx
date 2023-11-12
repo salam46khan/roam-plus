@@ -1,7 +1,7 @@
 import { useLottie } from "lottie-react";
 import { FcGoogle } from 'react-icons/fc'
 import loginAni from "../../assets/loginAni.json";
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { useContext, useState } from "react";
 import { AuthContext } from "../../Provider/AuthProvider";
 import { updateProfile } from "firebase/auth";
@@ -9,6 +9,7 @@ import { updateProfile } from "firebase/auth";
 const Signup = () => {
     const [error, setError] = useState('');
     const { createUser, googleSignIn} = useContext(AuthContext)
+    const navigate = useNavigate()
 
     const handleSingup = event => {
         event.preventDefault()
@@ -41,6 +42,7 @@ const Signup = () => {
                     displayName: name,
                     photoURL: imgURL
                 })
+                navigate('/')
             })
             .catch(error =>{
                 console.log(error);
@@ -53,6 +55,7 @@ const Signup = () => {
         googleSignIn()
             .then(result =>{
                 console.log(result.user);
+                navigate('/')
             })
             .catch(error=>{
                 console.log(error);

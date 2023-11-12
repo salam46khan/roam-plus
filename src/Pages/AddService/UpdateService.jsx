@@ -18,7 +18,7 @@ const UpdateService = () => {
         const discription = form.discription.value;
 
         const updateService = {service_name, service_area, price, photoURL, discription}
-        fetch(`http://localhost:5000/services/${_id}`, {
+        fetch(`https://roam-plus-server.vercel.app/services/${_id}`, {
             method: "PUT",
             headers: {
                 'content-type': 'application/json'

@@ -25,7 +25,7 @@ const AddService = () => {
 
         const AddService = { service_name, service_area, price, photoURL, discription, provider_img, provider_name, provider_email }
 
-        fetch('http://localhost:5000/services', {
+        fetch('https://roam-plus-server.vercel.app/services', {
             method: "POST",
             headers: {
                 'content-type': 'application/json'

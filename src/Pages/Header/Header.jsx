@@ -105,7 +105,7 @@ const Header = () => {
 
                     {
                         user ? <div className="h-10 w-10 rounded-full overflow-hidden m-1 tooltip" data-tip="Log Out">
-                            <img className="w-full " src={user.photoURL} alt="" />
+                            <img className="w-full object-cover h-full" src={user.photoURL} alt="" />
                         </div> : ''
                     }
                     <button onClick={handleMood} className=" bg-pink-400 w-10 h-10 text-xl flex justify-center items-center rounded-full m-1">

@@ -7,7 +7,7 @@ import Swal from 'sweetalert2'
 const MyServices = () => {
     const { user } = useContext(AuthContext)
     const [myService, setMyService] = useState([])
-    const url = `http://localhost:5000/my-services?email=${user.email}`;
+    const url = `https://roam-plus-server.vercel.app/my-services?email=${user.email}`;
 
     useEffect(() => {
         fetch(url)
@@ -18,7 +18,7 @@ const MyServices = () => {
 
     const handleDelete = (id) => {
         console.log(id);
-        fetch(`http://localhost:5000/services/${id}`, {
+        fetch(`https://roam-plus-server.vercel.app/services/${id}`, {
             method: 'DELETE'
         })
             .then(res => res.json())
