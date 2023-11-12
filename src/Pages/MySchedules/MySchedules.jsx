@@ -17,10 +17,10 @@ const MySchedules = () => {
     }, [user])
 
     useEffect(() => {
-        fetch(`http://localhost:5000/my-pending-work?email=salam46.khan@gmail.com`)
+        fetch(`http://localhost:5000/my-pending-work?email=${user.email}`)
             .then(res => res.json())
             .then(data => SetpendingWork(data))
-    }, [])
+    }, [user])
     return (
         <div className="dark:bg-slate-800 dark:text-base-100">
             <AllBanner>My Schedules</AllBanner>
@@ -85,7 +85,6 @@ const MySchedules = () => {
                             :
                             <div className="py-2">
                                 <h3 className="text-xl">There is no pending data for you. Fast add Service</h3>
-                                <p>pending : {pendingWork.length}</p>
                             </div>
                     }
                 </div>

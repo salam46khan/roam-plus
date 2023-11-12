@@ -1,9 +1,30 @@
 import PropTypes from 'prop-types'
+import Swal from 'sweetalert2';
 const PendingWork = ({ pending }) => {
-    const { service_name, servicePhoto, service_area, date, price, status } = pending;
+    const { _id, service_name, servicePhoto, service_area, date, price, status } = pending;
 
     const handleStatus = event =>{
-        console.log(event.target.value);
+        const status = event.target.value;
+        const newStatus = {status}
+        fetch(`http://localhost:5000/booking/${_id}`,{
+            method: "PUT",
+            headers: {
+                'content-type': 'application/json'
+            },
+            body: JSON.stringify(newStatus)
+        })
+            .then(res => res.json())
+            .then(data => {
+                console.log(data);
+                if(data.modifiedCount>0){
+                    Swal.fire({
+                        title: 'Success!',
+                        text: 'Your Status Update successfuly',
+                        icon: 'success',
+                        confirmButtonText: 'ok'
+                    })
+                }
+            })
     }
     return (
         <tr>
@@ -17,8 +38,8 @@ const PendingWork = ({ pending }) => {
             <td>
                 <select onChange={handleStatus} className="select bg-inherit border">
                     <option disabled selected>{status}</option>
-                    <option>Han Solo</option>
-                    <option>Greedo</option>
+                    <option>Progress</option>
+                    <option>Completed</option>
                 </select>
             </td>
         </tr>
